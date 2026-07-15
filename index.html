@@ -1039,6 +1039,11 @@ if(location.hash==='#selftest'){
   const r=runSelfTests();
   setTimeout(()=>toast(r.failed.length?('❌ Self-test: '+r.failed.length+'/'+r.total+' lỗi — xem Console'):('✅ Self-test: '+r.total+'/'+r.total+' đạt')),600);
 }
+update public.profiles set role = 'uni_officer'
+  where id = (select id from auth.users where email = 'phuc102499@vimaru.edu.vn');
+
+update public.profiles set role = 'city_officer'
+  where id = (select id from auth.users where email = 'phuc102499@vimaru.edu.vn');
 </script>
 </body>
 </html>
