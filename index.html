@@ -521,8 +521,8 @@ function setBusy(btn,on,busyText){
 let state = { session:null, me:null, myEvidence:[], myDossier:null, profiles:{}, dossiers:[], evidence:[] };
 let bootedFor = null;
 
-const ROLE_LABEL = { student:'Sinh viên', uni_officer:'Cán bộ cấp trường', city_officer:'Cán bộ cấp TP' };
-const ROLE_ICON  = { student:'🎓', uni_officer:'🏫', city_officer:'🏙️' };
+const ROLE_LABEL = { student:'Sinh viên', uni_officer:'Cán bộ cấp trường', city_officer:'Cán bộ cấp TP', both_officer:'Cán bộ cấp trường & TP' };
+const ROLE_ICON  = { student:'🎓', uni_officer:'🏫', city_officer:'🏙️', both_officer:'⚓' };
 const DOSS_LABEL = {
   draft:         ['📝 Nháp — chưa nộp lên cấp trường','sb-info'],
   submitted:     ['⏳ Đã nộp — đang chờ cấp trường xét','sb-warn'],
@@ -534,7 +534,8 @@ const DOSS_LABEL = {
 const TABS = {
   student:      [['ho-so','Hồ sơ & minh chứng'],['tieu-chuan','Tiêu chuẩn TP. Hải Phòng'],['report','Báo cáo tổng hợp']],
   uni_officer:  [['duyet','Duyệt minh chứng <span id="pendBadge"></span>'],['hoso-truong','Xét hồ sơ cấp trường'],['tieu-chuan','Tiêu chuẩn TP. Hải Phòng']],
-  city_officer: [['hoso-tp','Xét hồ sơ cấp thành phố'],['tieu-chuan','Tiêu chuẩn TP. Hải Phòng']]
+  city_officer: [['hoso-tp','Xét hồ sơ cấp thành phố'],['tieu-chuan','Tiêu chuẩn TP. Hải Phòng']],
+  both_officer: [['duyet','Duyệt minh chứng <span id="pendBadge"></span>'],['hoso-truong','Xét hồ sơ cấp trường'],['hoso-tp','Xét hồ sơ cấp thành phố'],['tieu-chuan','Tiêu chuẩn TP. Hải Phòng']]
 };
 const ALL_SECTIONS = ['ho-so','duyet','hoso-truong','hoso-tp','tieu-chuan','report'];
 
@@ -659,6 +660,8 @@ function renderAll(){
     fillProfileForm(); renderDossierCard(); renderVoyage(); renderCriteria(); renderReport();
   } else if(state.me.role==='uni_officer'){
     renderReviewEvidence(); renderUniDossiers();
+  } else if(state.me.role==='both_officer'){
+    renderReviewEvidence(); renderUniDossiers(); renderCityDossiers();
   } else {
     renderCityDossiers();
   }
