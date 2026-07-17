@@ -311,24 +311,6 @@ button:disabled{opacity:.55;cursor:not-allowed}
     <div class="grid">
       <div>
         <div class="card">
-          <h3>🗂 Hồ sơ của bạn</h3>
-          <div id="dossSwitch"></div>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <h3>🧾 Trạng thái hồ sơ đang chọn</h3>
-          <div id="dossBox"></div>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <h3>📤 Nộp minh chứng mới</h3>
-          <div id="evFormNote"></div>
-          <div class="field"><label for="e-crit">Tiêu chí / hạng mục</label><select id="e-crit" onchange="fillReqOptions()"></select></div>
-          <div class="field"><label for="e-req">Yêu cầu cần chứng minh</label><select id="e-req"></select></div>
-          <div class="field"><label for="e-title">Tên minh chứng</label><input id="e-title" placeholder="VD: Bảng điểm rèn luyện HK1 – 92 điểm"></div>
-          <div class="field"><label for="e-file">Tệp minh chứng (ảnh hoặc PDF, tối đa 3MB với PDF)</label><input id="e-file" type="file" accept="image/*,application/pdf"></div>
-          <button class="btn btn-red" style="width:100%" onclick="submitEvidence(this)">Nộp minh chứng</button>
-          <p class="hint">Ảnh được nén tự động trước khi tải lên. Minh chứng nộp vào <b>hồ sơ đang chọn</b> ở trên và chờ cán bộ duyệt.</p>
-        </div>
-        <div class="card" style="margin-top:16px">
           <h3>👤 Thông tin sinh viên</h3>
           <div class="field"><label for="p-name">Họ và tên</label><input id="p-name" placeholder="Nguyễn Văn A"></div>
           <div class="field"><label for="p-mssv">Mã sinh viên</label><input id="p-mssv" class="mono" placeholder="88888"></div>
@@ -353,6 +335,24 @@ button:disabled{opacity:.55;cursor:not-allowed}
           <div class="field"><label for="p-chucvu">Chức vụ Đoàn, Hội (nếu có)</label><input id="p-chucvu" placeholder="Ủy viên BCH Liên chi Đoàn Khoa..."></div>
           <button class="btn btn-primary" style="width:100%" onclick="saveProfile(this)">Lưu thông tin</button>
           <p class="hint">Thông tin được lưu trên máy chủ, gắn với tài khoản của bạn và tự điền vào Báo cáo thành tích.</p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>🗂 Hồ sơ của bạn</h3>
+          <div id="dossSwitch"></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>🧾 Trạng thái hồ sơ đang chọn</h3>
+          <div id="dossBox"></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>📤 Nộp minh chứng mới</h3>
+          <div id="evFormNote"></div>
+          <div class="field"><label for="e-crit">Tiêu chí / hạng mục</label><select id="e-crit" onchange="fillReqOptions()"></select></div>
+          <div class="field"><label for="e-req">Yêu cầu cần chứng minh</label><select id="e-req"></select></div>
+          <div class="field"><label for="e-title">Tên minh chứng</label><input id="e-title" placeholder="VD: Bảng điểm rèn luyện HK1 – 92 điểm"></div>
+          <div class="field"><label for="e-file">Tệp minh chứng (ảnh hoặc PDF, tối đa 3MB với PDF)</label><input id="e-file" type="file" accept="image/*,application/pdf"></div>
+          <button class="btn btn-red" style="width:100%" onclick="submitEvidence(this)">Nộp minh chứng</button>
+          <p class="hint">Ảnh được nén tự động trước khi tải lên. Minh chứng nộp vào <b>hồ sơ đang chọn</b> ở trên và chờ cán bộ duyệt.</p>
         </div>
       </div>
       <div id="critList"></div>
